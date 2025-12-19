@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to Clash</title>
+</head>
+
+<body style="margin:0;padding:0;background-color:#f4f6f8;font-family:Arial,Helvetica,sans-serif;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f6f8;padding:20px;">
+        <tr>
+            <td align="center">
+
+                <table width="600" cellpadding="0" cellspacing="0"
+                    style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+
+                    <%- include('../partials/head') %>
+
+                        <tr>
+                            <td style="padding:30px;color:#333333;">
+                                <p style="font-size:16px;margin:0 0 12px;">
+                                    Hello <strong>
+                                        <%= name %>
+                                    </strong>,
+                                </p>
+
+                                <p style="font-size:15px;line-height:1.6;margin:0 0 18px;">
+                                    We’re happy to see you and can’t wait to watch you create amazing clashes
+                                    Clash is built to give you the best experience possible.
+                                </p>
+
+                                <p style="font-size:15px;line-height:1.6;margin:0;">
+                                    If you have any questions, feel free to reach out.
+                                    We’re always happy to help
+                                </p>
+
+                                <div style="margin-top:25px;text-align:center;">
+                                    <a href="#" style="background:#2563eb;color:#ffffff;text-decoration:none;padding:12px 28px;
+                  border-radius:30px;font-size:15px;display:inline-block;">
+                                        Get Started
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <%- include('../partials/footer') %>
+
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

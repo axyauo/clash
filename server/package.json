@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "server": "nodemon ./dist/index.js",
+    "watch": "tsc -w",
+    "dev": "concurrently \"npm run watch\" \"npm run server\" \"npm run watch-views\"",
+    "build": "tsc && npm run copy-files",
+    "copy-files": "copyfiles -u 1 \"src/views/**/* \" dist/",
+    "watch-views": "nodemon --watch src/views --ext ejs --exec \"npm run copy-files\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^7.1.0",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "nodemailer": "^7.0.11",
+    "prisma": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.11",
+    "typescript": "^5.9.3"
+  }
+}
