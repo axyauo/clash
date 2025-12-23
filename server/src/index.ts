@@ -19,10 +19,16 @@ app.set('views', path.resolve(__dirname, './views'));
 
 app.get('/', async (req: Request, res: Response) => {
     const html = await ejs.renderFile(__dirname + '/views/emails/welcome.ejs', { name: "Akshay Pathak" });
-    await sendEmail("akshay.formfees@gmail.com", "Test SMTP", html);
+    // await sendEmail("akshay.formfees@gmail.com", "Test SMTP", html);
+
+    await emailQueue.add(emailQueueName, { to: "akshay.formfees@gmail.com", subject: "Test SMTP", body: html });
+
     return res.json({ message: "Email Sent Successfully" });
-    // return res.render("emails/welcome", { name: "Akshay Pathak" });
 });
+
+// Queues
+import './jobs/index.js';
+import { emailQueue, emailQueueName } from './jobs/EmailJob.js';
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
